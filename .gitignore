@@ -1,3 +1,28 @@
+# Shared/Private folders
+_SharedFolder*
+_sharedFolder*
+_Sharedfolder*
+_sharedfolder*
+_PrivateFolder*
+_privateFolder*
+_Privatefolder*
+_privatefolder*
+*projet-korum
+
+# Autre
+.DS_Store
+.Rhistory
+.RData
+
+# pour clessnhub
+table.csv
+
+##Excel
+*.xlsx
+###########################################
+##### LaTeX auxiliary files to ignore #####
+###########################################
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
@@ -19,7 +44,10 @@
 # these rules might exclude image files for figures etc.
 # *.ps
 # *.eps
-# *.pdf
+*.pdf
+*.png
+*.jpg
+
 
 ## Generated if empty string is given at "Please type another file name for output:"
 .pdf
@@ -40,10 +68,6 @@
 *.synctex.gz(busy)
 *.pdfsync
 
-## Build tool directories for auxiliary files
-# latexrun
-latex.out/
-
 ## Auxiliary and intermediate files from other packages:
 # algorithms
 *.alg
@@ -63,9 +87,6 @@ acs-*.bib
 
 # changes
 *.soc
-
-# comment
-*.cut
 
 # cprotect
 *.cpt
@@ -109,11 +130,6 @@ acs-*.bib
 *.glo
 *.gls
 *.glsdefs
-*.lzo
-*.lzs
-
-# uncomment this for glossaries-extra (will ignore makeindex's style files!)
-# *.ist
 
 # gnuplottex
 *-gnuplottex-*
@@ -142,13 +158,11 @@ acs-*.bib
 # listings
 *.lol
 
-# luatexja-ruby
-*.ltjruby
-
 # makeidx
 *.idx
 *.ilg
 *.ind
+*.ist
 
 # minitoc
 *.maf
@@ -169,108 +183,4 @@ _minted*
 # nomencl
 *.nlg
 *.nlo
-*.nls
-
-# pax
-*.pax
-
-# pdfpcnotes
-*.pdfpc
-
-# sagetex
-*.sagetex.sage
-*.sagetex.py
-*.sagetex.scmd
-
-# scrwfile
-*.wrt
-
-# sympy
-*.sout
-*.sympy
-sympy-plots-for-*.tex/
-
-# pdfcomment
-*.upa
-*.upb
-
-# pythontex
-*.pytxcode
-pythontex-files-*/
-
-# tcolorbox
-*.listing
-
-# thmtools
-*.loe
-
-# TikZ & PGF
-*.dpth
-*.md5
-*.auxlock
-
-# todonotes
-*.tdo
-
-# vhistory
-*.hst
-*.ver
-
-# easy-todo
-*.lod
-
-# xcolor
-*.xcp
-
-# xmpincl
-*.xmpi
-
-# xindy
-*.xdy
-
-# xypic precompiled matrices and outlines
-*.xyc
-*.xyd
-
-# endfloat
-*.ttt
-*.fff
-
-# Latexian
-TSWLatexianTemp*
-
-## Editors:
-# WinEdt
-*.bak
-*.sav
-
-# Texpad
-.texpadtmp
-
-# LyX
-*.lyx~
-
-# Kile
-*.backup
-
-# gummi
-.*.swp
-
-# KBibTeX
-*~[0-9]*
-
-# TeXnicCenter
-*.tps
-
-# auto folder when using emacs and auctex
-./auto/*
-*.el
-
-# expex forward references with \gathertags
-*-tags.tex
-
-# standalone packages
-*.sta
-
-# Makeindex log files
-*.lpz
+.Rproj.user

@@ -1,0 +1,339 @@
+"","IdCirc","nom2011","nom2015","nom2019","nameChange"
+"1",10001,"Avalon","Avalon","Avalon",0
+"2",10002,"Bonavista--Gander--Grand Falls--Windsor","Bonavista--Burin--Trinity","Bonavista--Burin--Trinity",1
+"3",10003,"Humber--St. Barbe--Baie Verte","Coast of Bays--Central--Notre Dame","Coast of Bays--Central--Notre Dame",1
+"4",10004,"Labrador","Labrador","Labrador",0
+"5",10005,"Random--Burin--St. George's","Long Range Mountains","Long Range Mountains",1
+"6",10006,"St. John's-Est","St. John's-Est","St. John's-Est",0
+"7",10007,"St. John's-Sud--Mount Pearl","St. John's-Sud--Mount Pearl","St. John's-Sud--Mount Pearl",0
+"8",11001,"Cardigan","Cardigan","Cardigan",0
+"9",11002,"Charlottetown","Charlottetown","Charlottetown",0
+"10",11003,"Egmont","Egmont","Egmont",0
+"11",11004,"Malpeque","Malpeque","Malpeque",0
+"12",12001,"Cape Breton--Canso","Cape Breton--Canso","Cape Breton--Canso",0
+"13",12002,"Nova-Centre","Nova-Centre","Nova-Centre",0
+"14",12003,"Dartmouth--Cole Harbour","Cumberland--Colchester","Cumberland--Colchester",1
+"15",12004,"Halifax","Dartmouth--Cole Harbour","Dartmouth--Cole Harbour",1
+"16",12005,"Halifax-Ouest","Halifax","Halifax",1
+"17",12006,"Kings--Hants","Halifax-Ouest","Halifax-Ouest",1
+"18",12007,"Cumberland--Colchester--Musquodoboit Valley","Kings--Hants","Kings--Hants",1
+"19",12008,"Sackville--Eastern Shore","Sackville--Preston--Chezzetcook","Sackville--Preston--Chezzetcook",1
+"20",12009,"South Shore--St. Margaret's","South Shore--St. Margarets","South Shore--St. Margarets",1
+"21",12010,"Sydney--Victoria","Sydney--Victoria","Sydney--Victoria",0
+"22",12011,"Nova-Ouest","Nova-Ouest","Nova-Ouest",0
+"23",13001,"Acadie--Bathurst","Acadie--Bathurst","Acadie--Bathurst",0
+"24",13002,"Beaus<e9>jour","Beauséjour","Beauséjour",1
+"25",13003,"Fredericton","Fredericton","Fredericton",0
+"26",13004,"Fundy Royal","Fundy Royal","Fundy Royal",0
+"27",13005,"Madawaska--Restigouche","Madawaska--Restigouche","Madawaska--Restigouche",0
+"28",13006,"Miramichi","Miramichi--Grand Lake","Miramichi--Grand Lake",1
+"29",13007,"Moncton--Riverview--Dieppe","Moncton--Riverview--Dieppe","Moncton--Riverview--Dieppe",0
+"30",13008,"Nouveau-Brunswick-Sud-Ouest","Nouveau-Brunswick-Sud-Ouest","Nouveau-Brunswick-Sud-Ouest",0
+"31",13009,"Saint John","Saint John--Rothesay","Saint John--Rothesay",1
+"32",13010,"Tobique--Mactaquac","Tobique--Mactaquac","Tobique--Mactaquac",0
+"33",24001,"Abitibi--T<e9>miscamingue","Abitibi--Baie-James--Nunavik--Eeyou","Abitibi--Baie-James--Nunavik--Eeyou",1
+"34",24002,"Ahuntsic","Abitibi--Témiscamingue","Abitibi--Témiscamingue",1
+"35",24003,"Alfred-Pellan","Ahuntsic-Cartierville","Ahuntsic-Cartierville",1
+"36",24004,"Argenteuil--Papineau--Mirabel","Alfred-Pellan","Alfred-Pellan",1
+"37",24005,"Beauce","Argenteuil--La Petite-Nation","Argenteuil--La Petite-Nation",1
+"38",24006,"Beauharnois--Salaberry","Avignon--La Mitis--Matane--Matapédia","Avignon--La Mitis--Matane--Matapédia",1
+"39",24007,"Beauport--Limoilou","Beauce","Beauce",1
+"40",24008,"Berthier--Maskinong<e9>","Beauport--Limoilou","Beauport--Limoilou",1
+"41",24009,"Bourassa","Bécancour--Nicolet--Saurel","Bécancour--Nicolet--Saurel",1
+"42",24010,"Brome--Missisquoi","Bellechasse--Les Etchemins--Lévis","Bellechasse--Les Etchemins--Lévis",1
+"43",24011,"Brossard--La Prairie","Beloeil--Chambly","Beloeil--Chambly",1
+"44",24012,"Chambly--Borduas","Berthier--Maskinongé","Berthier--Maskinongé",1
+"45",24013,"Charlesbourg--Haute-Saint-Charles","Thérèse-De Blainville","Thérèse-De Blainville",1
+"46",24014,"Montmorency--Charlevoix--Haute-C<f4>te-Nord","Pierre-Boucher--Les Patriotes--Verchères","Pierre-Boucher--Les Patriotes--Verchères",1
+"47",24015,"Ch<e2>teauguay--Saint-Constant","Bourassa","Bourassa",1
+"48",24016,"Chicoutimi--Le Fjord","Brome--Missisquoi","Brome--Missisquoi",1
+"49",24017,"Compton--Stanstead","Brossard--Saint-Lambert","Brossard--Saint-Lambert",1
+"50",24018,"Drummond","Rimouski-Neigette--Témiscouata--Les Basques","Rimouski-Neigette--Témiscouata--Les Basques",1
+"51",24019,"Gasp<e9>sie--<ce>les-de-la-Madeleine","Charlesbourg--Haute-Saint-Charles","Charlesbourg--Haute-Saint-Charles",1
+"52",24020,"Gatineau","Beauport-Côte-de-Beaupré-Île d'Orléans-Charlevoix","Beauport-Côte-de-Beaupré-Île d'Orléans-Charlevoix",1
+"53",24021,"Hochelaga","Châteauguay--Lacolle","Châteauguay--Lacolle",1
+"54",24022,"Honor<e9>-Mercier","Chicoutimi--Le Fjord","Chicoutimi--Le Fjord",1
+"55",24023,"Hull--Aylmer","Compton--Stanstead","Compton--Stanstead",1
+"56",24024,"Jeanne-Le Ber","Dorval--Lachine--LaSalle","Dorval--Lachine--LaSalle",1
+"57",24025,"Joliette","Drummond","Drummond",1
+"58",24026,"Jonqui<e8>re--Alma","Gaspésie--Les Îles-de-la-Madeleine","Gaspésie--Les Îles-de-la-Madeleine",1
+"59",24027,"Lac-Saint-Louis","Gatineau","Gatineau",1
+"60",24028,"La Pointe-de-l'<ce>le","Hochelaga","Hochelaga",1
+"61",24029,"LaSalle--<c9>mard","Honoré-Mercier","Honoré-Mercier",1
+"62",24030,"Laurentides--Labelle","Hull--Aylmer","Hull--Aylmer",1
+"63",24031,"Laurier--Sainte-Marie","Joliette","Joliette",1
+"64",24032,"Laval","Jonquière","Jonquière",1
+"65",24033,"Laval--Les <ce>les","La Pointe-de-l'Île","La Pointe-de-l'Île",1
+"66",24034,"L<e9>vis--Bellechasse","La Prairie","La Prairie",1
+"67",24035,"Longueuil--Pierre-Boucher","Lac-Saint-Jean","Lac-Saint-Jean",1
+"68",24036,"Lotbini<e8>re--Chutes-de-la-Chaudi<e8>re","Lac-Saint-Louis","Lac-Saint-Louis",1
+"69",24037,"Louis-H<e9>bert","LaSalle--Émard--Verdun","LaSalle--Émard--Verdun",1
+"70",24038,"Louis-Saint-Laurent","Laurentides--Labelle","Laurentides--Labelle",1
+"71",24039,"Manicouagan","Laurier--Sainte-Marie","Laurier--Sainte-Marie",1
+"72",24040,"Marc-Aur<e8>le-Fortin","Laval--Les Îles","Laval--Les Îles",1
+"73",24041,"Haute-Gasp<e9>sie--La Mitis--Matane--Matap<e9>dia","Longueuil--Charles-LeMoyne","Longueuil--Charles-LeMoyne",1
+"74",24042,"M<e9>gantic--L'<c9>rable","Lévis--Lotbinière","Lévis--Lotbinière",1
+"75",24043,"Montcalm","Longueuil--Saint-Hubert","Longueuil--Saint-Hubert",1
+"76",24044,"Mont-Royal","Louis-Hébert","Louis-Hébert",1
+"77",24045,"Notre-Dame-de-Gr<e2>ce--Lachine","Louis-Saint-Laurent","Louis-Saint-Laurent",1
+"78",24046,"Abitibi--Baie-James--Nunavik--Eeyou","Manicouagan","Manicouagan",1
+"79",24047,"Outremont","Mégantic--L'Érable","Mégantic--L'Érable",1
+"80",24048,"Papineau","Mirabel","Mirabel",1
+"81",24049,"Pierrefonds--Dollard","Montarville","Montarville",1
+"82",24050,"Pontiac","Montcalm","Montcalm",1
+"83",24051,"Portneuf--Jacques-Cartier","Montmagny--L'Islet--Kamouraska--Rivière-du-Loup","Montmagny--L'Islet--Kamouraska--Rivière-du-Loup",1
+"84",24052,"Qu<e9>bec","Mont-Royal","Mont-Royal",1
+"85",24053,"Repentigny","Notre-Dame-de-Grâce--Westmount","Notre-Dame-de-Grâce--Westmount",1
+"86",24054,"Bas-Richelieu--Nicolet--B<e9>cancour","Outremont","Outremont",1
+"87",24055,"Richmond--Arthabaska","Papineau","Papineau",1
+"88",24056,"Rimouski-Neigette--T<e9>miscouata--Les Basques","Pierrefonds--Dollard","Pierrefonds--Dollard",1
+"89",24057,"Rivi<e8>re-des-Mille-<ce>les","Pontiac","Pontiac",1
+"90",24058,"Montmagny--L'Islet--Kamouraska--Rivi<e8>re-du-Loup","Portneuf--Jacques-Cartier","Portneuf--Jacques-Cartier",1
+"91",24059,"Rivi<e8>re-du-Nord","Québec","Québec",1
+"92",24060,"Roberval--Lac-Saint-Jean","Repentigny","Repentigny",1
+"93",24061,"Rosemont--La Petite-Patrie","Richmond--Arthabaska","Richmond--Arthabaska",1
+"94",24062,"Saint-Bruno--Saint-Hubert","Rivière-des-Mille-Îles","Rivière-des-Mille-Îles",1
+"95",24063,"Saint-Hyacinthe--Bagot","Rivière-du-Nord","Rivière-du-Nord",1
+"96",24064,"Saint-Jean","Rosemont--La Petite-Patrie","Rosemont--La Petite-Patrie",1
+"97",24065,"Saint-Lambert","Marc-Aurèle-Fortin","Marc-Aurèle-Fortin",1
+"98",24066,"Saint-Laurent--Cartierville","Saint-Hyacinthe--Bagot","Saint-Hyacinthe--Bagot",1
+"99",24067,"Saint-L<e9>onard--Saint-Michel","Saint-Jean","Saint-Jean",1
+"100",24068,"Saint-Maurice--Champlain","Saint-Laurent","Saint-Laurent",1
+"101",24069,"Shefford","Saint-Léonard--Saint-Michel","Saint-Léonard--Saint-Michel",1
+"102",24070,"Sherbrooke","Saint-Maurice--Champlain","Saint-Maurice--Champlain",1
+"103",24071,"Terrebonne--Blainville","Salaberry--Suroît","Salaberry--Suroît",1
+"104",24072,"Trois-Rivi<e8>res","Shefford","Shefford",1
+"105",24073,"Vaudreuil-Soulanges","Sherbrooke","Sherbrooke",1
+"106",24074,"Verch<e8>res--Les Patriotes","Vaudreuil--Soulanges","Vaudreuil--Soulanges",1
+"107",24075,"Westmount--Ville-Marie","Terrebonne","Terrebonne",1
+"108",24076,NA,"Trois-Rivières","Trois-Rivières",NA
+"109",24077,NA,"Ville-Marie--Le Sud-Ouest--Île-des-Soeurs","Ville-Marie--Le Sud-Ouest--Île-des-Soeurs",NA
+"110",24078,NA,"Vimy","Vimy",NA
+"111",35001,"Ajax--Pickering","Ajax","Ajax",1
+"112",35002,"Algoma--Manitoulin--Kapuskasing","Algoma--Manitoulin--Kapuskasing","Algoma--Manitoulin--Kapuskasing",0
+"113",35003,"Ancaster--Dundas--Flamborough--Westdale","Aurora--Oak Ridges--Richmond Hill","Aurora--Oak Ridges--Richmond Hill",1
+"114",35004,"Barrie","Barrie--Innisfil","Barrie--Innisfil",1
+"115",35005,"Beaches--East York","Barrie--Springwater--Oro-Medonte","Barrie--Springwater--Oro-Medonte",1
+"116",35006,"Bramalea--Gore--Malton","Baie de Quinte","Baie de Quinte",1
+"117",35007,"Brampton--Springdale","Beaches--East York","Beaches--East York",1
+"118",35008,"Brampton-Ouest","Brampton-Centre","Brampton-Centre",1
+"119",35009,"Brant","Brampton-Est","Brampton-Est",1
+"120",35010,"Burlington","Brampton-Nord","Brampton-Nord",1
+"121",35011,"Cambridge","Brampton-Sud","Brampton-Sud",1
+"122",35012,"Carleton--Mississippi Mills","Brampton-Ouest","Brampton-Ouest",1
+"123",35013,"Chatham-Kent--Essex","Brantford--Brant","Brantford--Brant",1
+"124",35014,"Durham","Bruce--Grey--Owen Sound","Bruce--Grey--Owen Sound",1
+"125",35015,"Davenport","Burlington","Burlington",1
+"126",35016,"Don Valley-Est","Cambridge","Cambridge",1
+"127",35017,"Don Valley-Ouest","Chatham-Kent--Leamington","Chatham-Kent--Leamington",1
+"128",35018,"Dufferin--Caledon","Davenport","Davenport",1
+"129",35019,"Eglinton--Lawrence","Don Valley-Est","Don Valley-Est",1
+"130",35020,"Elgin--Middlesex--London","Don Valley-Nord","Don Valley-Nord",1
+"131",35021,"Essex","Don Valley-Ouest","Don Valley-Ouest",1
+"132",35022,"Etobicoke-Centre","Dufferin--Caledon","Dufferin--Caledon",1
+"133",35023,"Etobicoke--Lakeshore","Durham","Durham",1
+"134",35024,"Etobicoke-Nord","Eglinton--Lawrence","Eglinton--Lawrence",1
+"135",35025,"Glengarry--Prescott--Russell","Elgin--Middlesex--London","Elgin--Middlesex--London",1
+"136",35026,"Bruce--Grey--Owen Sound","Essex","Essex",1
+"137",35027,"Guelph","Etobicoke-Centre","Etobicoke-Centre",1
+"138",35028,"Haldimand--Norfolk","Etobicoke--Lakeshore","Etobicoke--Lakeshore",1
+"139",35029,"Haliburton--Kawartha Lakes--Brock","Etobicoke-Nord","Etobicoke-Nord",1
+"140",35030,"Halton","Flamborough--Glanbrook","Flamborough--Glanbrook",1
+"141",35031,"Hamilton-Centre","Glengarry--Prescott--Russell","Glengarry--Prescott--Russell",1
+"142",35032,"Hamilton-Est--Stoney Creek","Guelph","Guelph",1
+"143",35033,"Hamilton Mountain","Haldimand--Norfolk","Haldimand--Norfolk",1
+"144",35034,"Huron--Bruce","Haliburton--Kawartha Lakes--Brock","Haliburton--Kawartha Lakes--Brock",1
+"145",35035,"Kenora","Hamilton-Centre","Hamilton-Centre",1
+"146",35036,"Kingston et les <ce>les","Hamilton-Est--Stoney Creek","Hamilton-Est--Stoney Creek",1
+"147",35037,"Kitchener-Centre","Hamilton Mountain","Hamilton Mountain",1
+"148",35038,"Kitchener--Conestoga","Hamilton-Ouest--Ancaster--Dundas","Hamilton-Ouest--Ancaster--Dundas",1
+"149",35039,"Kitchener--Waterloo","Hastings--Lennox and Addington","Hastings--Lennox and Addington",1
+"150",35040,"Lanark--Frontenac--Lennox and Addington","Huron--Bruce","Huron--Bruce",1
+"151",35041,"Leeds--Grenville","Kanata--Carleton","Kanata--Carleton",1
+"152",35042,"London--Fanshawe","Kenora","Kenora",1
+"153",35043,"London-Centre-Nord","King--Vaughan","King--Vaughan",1
+"154",35044,"London-Ouest","Kingston et les Îles","Kingston et les Îles",1
+"155",35045,"Markham--Unionville","Kitchener-Centre","Kitchener-Centre",1
+"156",35046,"Lambton--Kent--Middlesex","Kitchener--Conestoga","Kitchener--Conestoga",1
+"157",35047,"Mississauga--Brampton-Sud","Kitchener-Sud--Hespeler","Kitchener-Sud--Hespeler",1
+"158",35048,"Mississauga-Est--Cooksville","Lambton--Kent--Middlesex","Lambton--Kent--Middlesex",1
+"159",35049,"Mississauga--Erindale","Lanark--Frontenac--Kingston","Lanark--Frontenac--Kingston",1
+"160",35050,"Mississauga-Sud","Leeds-Grenville-Thousand Islands et Rideau Lakes","Leeds--Grenville--Thousand Islands et Rideau Lakes",1
+"161",35051,"Mississauga--Streetsville","London--Fanshawe","London--Fanshawe",1
+"162",35052,"Nepean--Carleton","London-Centre-Nord","London-Centre-Nord",1
+"163",35053,"Newmarket--Aurora","London-Ouest","London-Ouest",1
+"164",35054,"Niagara Falls","Markham--Stouffville","Markham--Stouffville",1
+"165",35055,"Niagara-Ouest--Glanbrook","Markham--Thornhill","Markham--Thornhill",1
+"166",35056,"Nickel Belt","Markham--Unionville","Markham--Unionville",1
+"167",35057,"Nipissing--Timiskaming","Milton","Milton",1
+"168",35058,"Northumberland--Quinte West","Mississauga-Centre","Mississauga-Centre",1
+"169",35059,"Oak Ridges--Markham","Mississauga-Est--Cooksville","Mississauga-Est--Cooksville",1
+"170",35060,"Oakville","Mississauga--Erin Mills","Mississauga--Erin Mills",1
+"171",35061,"Oshawa","Mississauga--Lakeshore","Mississauga--Lakeshore",1
+"172",35062,"Ottawa-Centre","Mississauga--Malton","Mississauga--Malton",1
+"173",35063,"Ottawa--Orl<e9>ans","Mississauga--Streetsville","Mississauga--Streetsville",1
+"174",35064,"Ottawa-Sud","Nepean","Nepean",1
+"175",35065,"Ottawa--Vanier","Newmarket--Aurora","Newmarket--Aurora",1
+"176",35066,"Ottawa-Ouest--Nepean","Niagara-Centre","Niagara-Centre",1
+"177",35067,"Oxford","Niagara Falls","Niagara Falls",1
+"178",35068,"Parkdale--High Park","Niagara-Ouest","Niagara-Ouest",1
+"179",35069,"Parry Sound--Muskoka","Nickel Belt","Nickel Belt",1
+"180",35070,"Perth--Wellington","Nipissing--Timiskaming","Nipissing--Timiskaming",1
+"181",35071,"Peterborough","Northumberland--Peterborough-Sud","Northumberland--Peterborough-Sud",1
+"182",35072,"Pickering--Scarborough-Est","Oakville","Oakville",1
+"183",35073,"Prince Edward--Hastings","Oakville-Nord--Burlington","Oakville-Nord--Burlington",1
+"184",35074,"Renfrew--Nipissing--Pembroke","Oshawa","Oshawa",1
+"185",35075,"Richmond Hill","Ottawa-Centre","Ottawa-Centre",1
+"186",35076,"St. Catharines","Orléans","Orléans",1
+"187",35077,"St. Paul's","Ottawa-Sud","Ottawa-Sud",1
+"188",35078,"Sarnia--Lambton","Ottawa--Vanier","Ottawa--Vanier",1
+"189",35079,"Sault Ste. Marie","Ottawa-Ouest--Nepean","Ottawa-Ouest--Nepean",1
+"190",35080,"Scarborough--Agincourt","Oxford","Oxford",1
+"191",35081,"Scarborough-Centre","Parkdale--High Park","Parkdale--High Park",1
+"192",35082,"Scarborough--Guildwood","Parry Sound--Muskoka","Parry Sound--Muskoka",1
+"193",35083,"Scarborough--Rouge River","Perth--Wellington","Perth--Wellington",1
+"194",35084,"Scarborough-Sud-Ouest","Peterborough--Kawartha","Peterborough--Kawartha",1
+"195",35085,"Simcoe--Grey","Pickering--Uxbridge","Pickering--Uxbridge",1
+"196",35086,"Simcoe-Nord","Renfrew--Nipissing--Pembroke","Renfrew--Nipissing--Pembroke",1
+"197",35087,"Stormont--Dundas--South Glengarry","Richmond Hill","Richmond Hill",1
+"198",35088,"Sudbury","Carleton","Carleton",1
+"199",35089,"Thornhill","St. Catharines","St. Catharines",1
+"200",35090,"Thunder Bay--Rainy River","Toronto--St. Paul's","Toronto--St. Paul's",1
+"201",35091,"Thunder Bay--Superior-Nord","Sarnia--Lambton","Sarnia--Lambton",1
+"202",35092,"Timmins--Baie James","Sault Ste. Marie","Sault Ste. Marie",1
+"203",35093,"Toronto-Centre","Scarborough--Agincourt","Scarborough--Agincourt",1
+"204",35094,"Toronto--Danforth","Scarborough-Centre","Scarborough-Centre",1
+"205",35095,"Trinity--Spadina","Scarborough--Guildwood","Scarborough--Guildwood",1
+"206",35096,"Vaughan","Scarborough-Nord","Scarborough-Nord",1
+"207",35097,"Welland","Scarborough--Rouge Park","Scarborough--Rouge Park",1
+"208",35098,"Wellington--Halton Hills","Scarborough-Sud-Ouest","Scarborough-Sud-Ouest",1
+"209",35099,"Whitby--Oshawa","Simcoe--Grey","Simcoe--Grey",1
+"210",35100,"Willowdale","Simcoe-Nord","Simcoe-Nord",1
+"211",35101,"Windsor--Tecumseh","Spadina--Fort York","Spadina--Fort York",1
+"212",35102,"Windsor-Ouest","Stormont--Dundas--South Glengarry","Stormont--Dundas--South Glengarry",1
+"213",35103,"York-Centre","Sudbury","Sudbury",1
+"214",35104,"York--Simcoe","Thornhill","Thornhill",1
+"215",35105,"York-Sud--Weston","Thunder Bay--Rainy River","Thunder Bay--Rainy River",1
+"216",35106,"York-Ouest","Thunder Bay--Supérieur-Nord","Thunder Bay--Supérieur-Nord",1
+"217",35107,NA,"Timmins--Baie James","Timmins--Baie James",NA
+"218",35108,NA,"Toronto-Centre","Toronto-Centre",NA
+"219",35109,NA,"Toronto--Danforth","Toronto--Danforth",NA
+"220",35110,NA,"University--Rosedale","University--Rosedale",NA
+"221",35111,NA,"Vaughan--Woodbridge","Vaughan--Woodbridge",NA
+"222",35112,NA,"Waterloo","Waterloo",NA
+"223",35113,NA,"Wellington--Halton Hills","Wellington--Halton Hills",NA
+"224",35114,NA,"Whitby","Whitby",NA
+"225",35115,NA,"Willowdale","Willowdale",NA
+"226",35116,NA,"Windsor--Tecumseh","Windsor--Tecumseh",NA
+"227",35117,NA,"Windsor-Ouest","Windsor-Ouest",NA
+"228",35118,NA,"York-Centre","York-Centre",NA
+"229",35119,NA,"York--Simcoe","York--Simcoe",NA
+"230",35120,NA,"York-Sud--Weston","York-Sud--Weston",NA
+"231",35121,NA,"Humber River--Black Creek","Humber River--Black Creek",NA
+"232",46001,"Brandon--Souris","Brandon--Souris","Brandon--Souris",0
+"233",46002,"Charleswood--St. James--Assiniboia","Charleswood--St. James--Assiniboia--Headingley","Charleswood--St. James--Assiniboia--Headingley",1
+"234",46003,"Churchill","Churchill--Keewatinook Aski","Churchill--Keewatinook Aski",1
+"235",46004,"Dauphin--Swan River--Marquette","Dauphin--Swan River--Neepawa","Dauphin--Swan River--Neepawa",1
+"236",46005,"Elmwood--Transcona","Elmwood--Transcona","Elmwood--Transcona",0
+"237",46006,"Kildonan--St. Paul","Kildonan--St. Paul","Kildonan--St. Paul",0
+"238",46007,"Portage--Lisgar","Portage--Lisgar","Portage--Lisgar",0
+"239",46008,"Provencher","Provencher","Provencher",0
+"240",46009,"Saint-Boniface","Saint-Boniface--Saint-Vital","Saint-Boniface--Saint-Vital",1
+"241",46010,"Selkirk--Interlake","Selkirk--Interlake--Eastman","Selkirk--Interlake--Eastman",1
+"242",46011,"Winnipeg-Centre","Winnipeg-Centre","Winnipeg-Centre",0
+"243",46012,"Winnipeg-Nord","Winnipeg-Nord","Winnipeg-Nord",0
+"244",46013,"Winnipeg-Sud","Winnipeg-Sud","Winnipeg-Sud",0
+"245",46014,"Winnipeg-Centre-Sud","Winnipeg-Centre-Sud","Winnipeg-Centre-Sud",0
+"246",47001,"Battlefords--Lloydminster","Battlefords--Lloydminster","Battlefords--Lloydminster",0
+"247",47002,"Blackstrap","Cypress Hills--Grasslands","Cypress Hills--Grasslands",1
+"248",47003,"Desneth<e9>--Missinippi--Rivi<e8>re Churchill","Desnethé--Missinippi--Rivière Churchill","Desnethé--Missinippi--Rivière Churchill",1
+"249",47004,"Cypress Hills--Grasslands","Sentier Carlton--Eagle Creek","Sentier Carlton--Eagle Creek",1
+"250",47005,"Palliser","Moose Jaw--Lake Centre--Lanigan","Moose Jaw--Lake Centre--Lanigan",1
+"251",47006,"Prince Albert","Prince Albert ","Prince Albert",1
+"252",47007,"Regina--Lumsden--Lake Centre","Regina--Lewvan","Regina--Lewvan",1
+"253",47008,"Regina--Qu'Appelle","Regina--Qu'Appelle ","Regina--Qu'Appelle",1
+"254",47009,"Saskatoon--Humboldt","Regina--Wascana ","Regina--Wascana",1
+"255",47010,"Saskatoon--Rosetown--Biggar","Saskatoon--Grasswood","Saskatoon--Grasswood",1
+"256",47011,"Saskatoon--Wanuskewin","Saskatoon--University","Saskatoon--University",1
+"257",47012,"Souris--Moose Mountain","Saskatoon-Ouest","Saskatoon-Ouest",1
+"258",47013,"Wascana","Souris--Moose Mountain ","Souris--Moose Mountain",1
+"259",47014,"Yorkton--Melville","Yorkton--Melville ","Yorkton--Melville",1
+"260",48001,"Fort McMurray--Athabasca","Banff--Airdrie","Banff--Airdrie",1
+"261",48002,"Calgary-Est","Battle River--Crowfoot","Battle River--Crowfoot",1
+"262",48003,"Calgary-Centre-Nord","Bow River","Bow River",1
+"263",48004,"Calgary-Nord-Est","Calgary-Centre","Calgary-Centre",1
+"264",48005,"Calgary--Nose Hill","Calgary Confederation","Calgary Confederation",1
+"265",48006,"Calgary-Centre","Calgary Forest Lawn","Calgary Forest Lawn",1
+"266",48007,"Calgary-Sud-Est","Calgary Heritage","Calgary Heritage",1
+"267",48008,"Calgary-Sud-Ouest","Calgary Midnapore","Calgary Midnapore",1
+"268",48009,"Calgary-Ouest","Calgary Nose Hill","Calgary Nose Hill",1
+"269",48010,"Crowfoot","Calgary Rocky Ridge","Calgary Rocky Ridge",1
+"270",48011,"Edmonton--Mill Woods--Beaumont","Calgary Shepard","Calgary Shepard",1
+"271",48012,"Edmonton-Centre","Calgary Signal Hill","Calgary Signal Hill",1
+"272",48013,"Edmonton-Est","Calgary Skyview","Calgary Skyview",1
+"273",48014,"Edmonton--Leduc","Edmonton-Centre","Edmonton-Centre",1
+"274",48015,"Edmonton--St. Albert","Edmonton Griesbach","Edmonton Griesbach",1
+"275",48016,"Edmonton--Sherwood Park","Edmonton Manning","Edmonton Manning",1
+"276",48017,"Edmonton--Spruce Grove","Edmonton Mill Woods","Edmonton Mill Woods",1
+"277",48018,"Edmonton--Strathcona","Edmonton Riverbend","Edmonton Riverbend",1
+"278",48019,"Lethbridge","Edmonton Strathcona","Edmonton Strathcona",1
+"279",48020,"Macleod","Edmonton-Ouest","Edmonton-Ouest",1
+"280",48021,"Medicine Hat","Edmonton--Wetaskiwin","Edmonton--Wetaskiwin",1
+"281",48022,"Peace River","Foothills","Foothills",1
+"282",48023,"Red Deer","Fort McMurray--Cold Lake","Fort McMurray--Cold Lake",1
+"283",48024,"Vegreville--Wainwright","Grande Prairie--Mackenzie","Grande Prairie--Mackenzie",1
+"284",48025,"Westlock--St. Paul","Lakeland","Lakeland",1
+"285",48026,"Wetaskiwin","Lethbridge","Lethbridge",1
+"286",48027,"Wild Rose","Medicine Hat--Cardston--Warner","Medicine Hat--Cardston--Warner",1
+"287",48028,"Yellowhead","Peace River--Westlock","Peace River--Westlock",1
+"288",48029,NA,"Red Deer--Mountain View","Red Deer--Mountain View",NA
+"289",48030,NA,"Red Deer--Lacombe","Red Deer--Lacombe",NA
+"290",48031,NA,"St. Albert--Edmonton","St. Albert--Edmonton",NA
+"291",48032,NA,"Sherwood Park--Fort Saskatchewan","Sherwood Park--Fort Saskatchewan",NA
+"292",48033,NA,"Sturgeon River--Parkland","Sturgeon River--Parkland",NA
+"293",48034,NA,"Yellowhead","Yellowhead",NA
+"294",59001,"Abbotsford","Abbotsford","Abbotsford",0
+"295",59002,"Burnaby--Douglas","Burnaby-Nord--Seymour","Burnaby-Nord--Seymour",1
+"296",59003,"Burnaby--New Westminster","Burnaby-Sud","Burnaby-Sud",1
+"297",59004,"Cariboo--Prince George","Cariboo--Prince George","Cariboo--Prince George",0
+"298",59005,"Chilliwack--Fraser Canyon","Central Okanagan--Similkameen--Nicola","Central Okanagan--Similkameen--Nicola",1
+"299",59006,"Delta--Richmond-Est","Chilliwack--Hope","Chilliwack--Hope",1
+"300",59007,"Pitt Meadows--Maple Ridge--Mission","Cloverdale--Langley City","Cloverdale--Langley City",1
+"301",59008,"Esquimalt--Juan de Fuca","Coquitlam--Port Coquitlam","Coquitlam--Port Coquitlam",1
+"302",59009,"Fleetwood--Port Kells","Courtenay--Alberni","Courtenay--Alberni",1
+"303",59010,"Kamloops--Thompson--Cariboo","Cowichan--Malahat--Langford","Cowichan--Malahat--Langford",1
+"304",59011,"Kelowna--Lake Country","Delta","Delta",1
+"305",59012,"Kootenay--Columbia","Fleetwood--Port Kells","Fleetwood--Port Kells",1
+"306",59013,"Langley","Kamloops--Thompson--Cariboo","Kamloops--Thompson--Cariboo",1
+"307",59014,"Nanaimo--Alberni","Kelowna--Lake Country","Kelowna--Lake Country",1
+"308",59015,"Nanaimo--Cowichan","Kootenay--Columbia","Kootenay--Columbia",1
+"309",59016,"Newton--Delta-Nord","Langley--Aldergrove","Langley--Aldergrove",1
+"310",59017,"New Westminster--Coquitlam","Mission--Matsqui--Fraser Canyon","Mission--Matsqui--Fraser Canyon",1
+"311",59018,"Okanagan--Shuswap","Nanaimo--Ladysmith","Nanaimo--Ladysmith",1
+"312",59019,"North Vancouver","New Westminster--Burnaby","New Westminster--Burnaby",1
+"313",59020,"Okanagan--Coquihalla","North Okanagan--Shuswap","North Okanagan--Shuswap",1
+"314",59021,"Port Moody--Westwood--Port Coquitlam","North Vancouver","North Vancouver",1
+"315",59022,"Prince George--Peace River","Pitt Meadows--Maple Ridge","Pitt Meadows--Maple Ridge",1
+"316",59023,"Richmond","Port Moody--Coquitlam","Port Moody--Coquitlam",1
+"317",59024,"Saanich--Gulf Islands","Prince George--Peace River--Northern Rockies","Prince George--Peace River--Northern Rockies",1
+"318",59025,"Skeena--Bulkley Valley","Richmond-Centre","Richmond-Centre",1
+"319",59026,"Colombie-Britannique-Southern Interior","Esquimalt--Saanich--Sooke","Esquimalt--Saanich--Sooke",1
+"320",59027,"Surrey-Sud--White Rock--Cloverdale","Saanich--Gulf Islands","Saanich--Gulf Islands",1
+"321",59028,"Surrey-Nord","Skeena--Bulkley Valley","Skeena--Bulkley Valley",1
+"322",59029,"Vancouver-Centre","Okanagan-Sud--Kootenay-Ouest","Okanagan-Sud--Kootenay-Ouest",1
+"323",59030,"Vancouver-Est","Surrey-Sud--White Rock","Surrey-Sud--White Rock",1
+"324",59031,"<ce>le de Vancouver-Nord","Steveston--Richmond-Est","Steveston--Richmond-Est",1
+"325",59032,"Vancouver Kingsway","Surrey-Centre","Surrey-Centre",1
+"326",59033,"Vancouver Quadra","Surrey--Newton","Surrey--Newton",1
+"327",59034,"Vancouver-Sud","Vancouver-Centre","Vancouver-Centre",1
+"328",59035,"Victoria","Vancouver-Est","Vancouver-Est",1
+"329",59036,"West Vancouver--Sunshine Coast--Sea to Sky Country","Vancouver Granville","Vancouver Granville",1
+"330",59037,NA,"North Island--Powell River","North Island--Powell River",NA
+"331",59038,NA,"Vancouver Kingsway","Vancouver Kingsway",NA
+"332",59039,NA,"Vancouver Quadra","Vancouver Quadra",NA
+"333",59040,NA,"Vancouver-Sud","Vancouver-Sud",NA
+"334",59041,NA,"Victoria","Victoria",NA
+"335",59042,NA,"West Vancouver--Sunshine Coast--Sea to Sky Country","West Vancouver--Sunshine Coast--Sea to Sky Country",NA
+"336",60001,"Yukon","Yukon","Yukon",0
+"337",61001,"Western Arctic","Territoires du Nord-Ouest","Territoires du Nord-Ouest",1
+"338",62001,"Nunavut","Nunavut","Nunavut",0

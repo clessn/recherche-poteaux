@@ -18,6 +18,8 @@ test1 <- Df_data %>%
 vote <- left_join(test, test1, by = "IdCirc") %>% 
   mutate(PCT= round(NbVotes/NbÉlecteurs*100, digits = 1))
   
+
+
 # Données twitter ####
 twitter <- readRDS("_SharedFolder_RecherchePoteaux/vote2019/twitter.rds") %>%
   select(c(IdCirc = ED_CODE, Parti = data.currentParty,
@@ -77,7 +79,7 @@ ggplot(merge, aes(x = log(PCT), y = log(n_tw))) +
 
 ggplot(mergemax, aes(x = dif, y = log(n_tw))) +
   geom_point(aes(color = Parti), size = 1) +
-  geom_smooth(se = T, size = 1) +
+  geom_smooth(se = F, size = 1) +
   scale_color_manual(values = colors) +
   ylab("Nombre de tweets du candidat pendant\nla campagne électorale de 2021 (log)\n") +
   xlab("\nDifférence avec le parti gagnant dans la circonscription en 2019 (log)") +
@@ -106,3 +108,30 @@ ggsave("_SharedFolder_RecherchePoteaux/vote2019/aveczeros.png")
 ggplot(merge, aes(x = n_tw)) +
   geom_histogram(binwidth = 5) +
   coord_cartesian(xlim = c(0, 1000))
+
+
+#Différence avec le deuxième 
+
+difdeux <- merge %>%
+  group_by(IdCirc) %>%
+  top_n(2, NbVotes) %>%
+  mutate(PCTR = min(PCT), 
+        diff = PCT - PCTR ) %>%
+  filter(diff > 0)
+
+
+# Vainqueur 
+
+ggplot(difdeux, aes(x = diff, y = log(n_tw))) +
+  geom_point(aes(color = Parti), size = 1) +
+  geom_smooth(se = F, size = 1) +
+  scale_color_manual(values = colors) +
+  ylab("Nombre de tweets du candidat pendant\nla campagne électorale de 2021 (log)\n") +
+  xlab("\n PCT d'eccart avec le deuxième (log)") +
+  facet_wrap(facets = ~Parti, scales = "free") +
+  theme_bw(base_size = 7.5) +
+  theme(panel.background = element_blank(),
+        panel.grid = element_blank())
+
+
+

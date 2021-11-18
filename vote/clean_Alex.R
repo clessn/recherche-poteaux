@@ -133,5 +133,6 @@ ggplot(difdeux, aes(x = diff, y = log(n_tw))) +
   theme(panel.background = element_blank(),
         panel.grid = element_blank())
 
+ggsave("_SharedFolder_RecherchePoteaux/graphs/vainqueurs.png")
 
 

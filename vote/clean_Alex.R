@@ -125,6 +125,7 @@ difdeux <- merge %>%
 ggplot(difdeux, aes(x = diff, y = log(n_tw))) +
   geom_point(aes(color = Parti), size = 1) +
   geom_smooth(se = F, size = 1) +
+  scale_x_continuous(expand = expansion(mult = c(0, 0))) + scale_y_continuous(expand = expansion(mult = c(0, 0)))+
   scale_color_manual(values = colors) +
   ylab("Nombre de tweets du candidat pendant\nla campagne électorale de 2021 (log)\n") +
   xlab("\n PCT d'eccart avec le deuxième (log)") +
@@ -133,6 +134,5 @@ ggplot(difdeux, aes(x = diff, y = log(n_tw))) +
   theme(panel.background = element_blank(),
         panel.grid = element_blank())
 
-ggsave("_SharedFolder_RecherchePoteaux/graphs/vainqueurs.png")
 
 

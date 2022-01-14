@@ -127,12 +127,12 @@ ggplot(difdeux, aes(x = diff, y = log(n_tw))) +
   geom_smooth(se = F, size = 1) +
   scale_color_manual(values = colors) +
   ylab("Nombre de tweets du candidat pendant\nla campagne électorale de 2021 (log)\n") +
-  xlab("\n PCT d'eccart avec le deuxième (log)") +
+  xlab("\n PCT d'écart avec le deuxième (log)") +
   facet_wrap(facets = ~Parti, scales = "free") +
   theme_bw(base_size = 7.5) +
   theme(panel.background = element_blank(),
         panel.grid = element_blank())
 
-ggsave("_SharedFolder_RecherchePoteaux/graphs/vainqueurs.png")
+ggsave("_SharedFolder_RecherchePoteaux/vote2019/vainqueurs.png")
 
 

@@ -79,22 +79,53 @@ RRI <- ByCirc %>%
   mutate(prov = provinces[substr(id_circ, 1, 2)],
          qcCity = ifelse(id_circ %in% circs_QCcity, 1, 0),
          mtl = ifelse(id_circ %in% circs_MTL, 1, 0),
-         tor = ifelse(id_circ %in% circs_TOR, 1, 0)) %>% 
+         tor = ifelse(id_circ %in% circs_TOR, 1, 0),
+         has_twitter = ifelse(has_twitter == 1, "With Twitter",
+                              "Without Twitter")) %>% 
   fastDummies::dummy_cols(., select_columns = "prov") %>% 
   fastDummies::dummy_cols(., select_columns = "party")
 
 library(ggridges)
-ggplot(RRI, aes(x = rri, y = as.factor(has_twitter))) +
-  geom_density_ridges(bandwidth = 1.5) +
+ggplot(RRI, aes(x = rri, y = factor(has_twitter,
+                                    levels = c("Without Twitter",
+                                               "With Twitter")),
+                color = has_twitter, fill = has_twitter)) +
+  geom_density_ridges(bandwidth = 1.5,
+                      scale = 0.95,
+                      alpha = 0.75,
+                      show.legend = F) +
   scale_y_discrete(expand = c(0,0)) +
+  scale_color_manual(values = c("#1DA1F2", "#AAB8C2")) +
+  scale_fill_manual(values =  c("#1DA1F2", "#AAB8C2")) +
   theme_ridges() +
-  theme()
+  xlab("Party's RRI in the candidate's\nriding in 2019") +
+  ylab("") +
+  theme(panel.background = element_rect(fill = "white"),
+        plot.background = element_rect(fill = "white"),
+        axis.title.x = element_text(size = 12, hjust = 0.5))
 ggsave("_SharedFolder_RecherchePoteaux/graphs/account_vs_noacc.png",
        width = 7, height = 5)  
 
-ggplot(RRI, aes(x = rri, y = as.factor(has_twitter))) +
-  geom_density_ridges() +
-  facet_grid(rows = vars(party))
+ggplot(RRI, aes(x = rri, y = factor(has_twitter,
+                                    levels = c("Without Twitter",
+                                               "With Twitter")),
+                color = has_twitter, fill = has_twitter)) +
+  geom_density_ridges(bandwidth = 3,
+                      scale = 0.95,
+                      alpha = 0.75,
+                      show.legend = F) +
+  facet_wrap(~party) +
+  scale_y_discrete(expand = c(0,0)) +
+  scale_color_manual(values = c("#1DA1F2", "#AAB8C2")) +
+  scale_fill_manual(values =  c("#1DA1F2", "#AAB8C2")) +
+  theme_ridges() +
+  xlab("Party's RRI in the candidate's\nriding in 2019") +
+  ylab("") +
+  theme(panel.background = element_rect(fill = "white"),
+        plot.background = element_rect(fill = "white"),
+        axis.title.x = element_text(size = 12, hjust = 0.5))
+ggsave("_SharedFolder_RecherchePoteaux/graphs/account_vs_noacc_party.png",
+       width = 7, height = 5)  
 
 RRI$rri_norm <- normalize(RRI$rri)
 RRI$ntweets_norm <- normalize(RRI$n_tweets)

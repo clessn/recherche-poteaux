@@ -1,0 +1,24 @@
+---
+title: "regression_tables"
+author: "CLESSN"
+date: '2022-07-21'
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r results='asis', echo=F, resize.width=1, align = "left"}
+library(stargazer)
+source("rri.R")
+stargazer(model, header = F,
+          single.row = F, column.sep.width = "1pt",
+          no.space = TRUE, type = "latex",
+          digits = 2, keep.stat = c("n", "rsq"),
+          dep.var.labels = "Nombre de tweets (normalisé)",
+          covariate.labels= c("RRI (normalisé)", "Ville de QC", "Cand. BQ",
+                              "Cand. PCC", "Cand. PLC", "Cand. NPD", "Ville de MTL",
+                              "QC * BQ", "QC * PCC", "QC * PLC", "QC * NPD",
+                              "MTL * BQ", "MTL * PCC", "MTL * PLC", "MTL * NPD"))
+```

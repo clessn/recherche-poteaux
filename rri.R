@@ -1,3 +1,44 @@
+library(tidyverse)
+library(haven)
+#library(gender)
+library(data.table)
+library(cowplot)
+library(ggtext)
+
+normalize <- function(vector){
+  min <- min(vector)
+  max <- max(vector)
+  vec <- (vector-min)/(max-min)
+  return(vec)
+}
+
+regress <-
+  function(data,
+           y,
+           x,
+           reg_type,
+           controls = as.character(),
+           family = NA) {
+    x_express <- paste0(x, collapse = " + ")
+    vars_express <- paste0(y, " ~ ", x_express)
+    controls_express <- paste0(controls, collapse = " + ")
+    varsWcont_express <- if (length(controls) == 0) {
+      vars_express
+    }
+    else {
+      paste0(vars_express, " + ", controls_express)
+    }
+    express <-
+      paste0(reg_type, "(", varsWcont_express, ", data = ", data)
+    express <- if (is.na(family)) {
+      paste0(express, ")")
+    }
+    else {
+      paste0(express, ", family = ", family, ")")
+    }
+    model <- eval(parse(text = express))
+    return(model)
+  }
 
 Data <- readRDS("_SharedFolder_RecherchePoteaux/vote2019/ResultatsParBureau2019.rds")
 parties <- c("NDP" = "NPD", "CPC" = "PCC", "LPC" = "PLC",
@@ -64,9 +105,35 @@ ggplot(RRI, aes(x = rri, y = factor(has_twitter,
   ylab("") +
   theme(panel.background = element_rect(fill = "white"),
         plot.background = element_rect(fill = "white"),
-        axis.title.x = element_text(size = 12, hjust = 0.5))
+        axis.title.x = element_text(size = 12, hjust = 0.5)) +
+  geom_vline(xintercept = 0,
+             size= 0.5)
 ggsave("_SharedFolder_RecherchePoteaux/graphs/account_vs_noacc.png",
        width = 7, height = 5)  
+
+
+party_names <- c(
+  PLC = "LPC",
+  PCC = "CPC",
+  NPD = "NDP",
+  BQ = "BQ",
+  PVC = "GPC"
+)
+
+
+party_color <- data.frame(var = c("LPC", "CPC", "NDP", "BQ", "GPC"),
+                          var_color= c("#D71920","#1A4782","#F37021","#33B2CC", "#3D9B35"))
+
+  
+  (
+  LPC = "#D71920", 
+  CPC = "#1A4782",
+  NDP = "#F37021", 
+  BQ = "#33B2CC", 
+  GPC = "#3D9B35")
+
+
+
 
 ggplot(RRI, aes(x = rri, y = factor(has_twitter,
                                     levels = c("Without Twitter",
@@ -76,7 +143,7 @@ ggplot(RRI, aes(x = rri, y = factor(has_twitter,
                       scale = 0.95,
                       alpha = 0.75,
                       show.legend = F) +
-  facet_wrap(~party) +
+  facet_wrap(~party, labeller = as_labeller(party_names)) +
   scale_y_discrete(expand = c(0,0)) +
   scale_color_manual(values = c("#1DA1F2", "#AAB8C2")) +
   scale_fill_manual(values =  c("#1DA1F2", "#AAB8C2")) +
@@ -85,7 +152,16 @@ ggplot(RRI, aes(x = rri, y = factor(has_twitter,
   ylab("") +
   theme(panel.background = element_rect(fill = "white"),
         plot.background = element_rect(fill = "white"),
-        axis.title.x = element_text(size = 12, hjust = 0.5))
+        axis.title.x = element_text(size = 12, hjust = 0.5), 
+        strip.background = element_blank(),
+        strip.text = element_textbox(
+          size = 12,
+          color = "#F5F8FA", fill = "#14171A", box.color = "#14171A",
+          halign = 0.5, linetype = 1, r = unit(5, "pt"), width = unit(0.9, "npc"),
+          padding = margin(2, 0, 1, 0), margin = margin(3, 3, 3, 3)
+        )) +
+  geom_vline(xintercept = 0,
+             size= 1)
 ggsave("_SharedFolder_RecherchePoteaux/graphs/account_vs_noacc_party.png",
        width = 7, height = 5)  
 
@@ -100,6 +176,10 @@ ggplot(RRI, aes(x = rri, y = log(n_tweets))) +
   geom_point() +
   geom_smooth() +
   facet_grid(rows = vars(prov), cols = vars(party))
+
+
+#  test
+
 
 
 # Regressions ####

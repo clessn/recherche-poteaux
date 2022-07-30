@@ -1,5 +1,8 @@
 library(tidyverse)
 library(haven)
+library(data.table)
+library(cowplot)
+library(ggtext)
 
 normalize <- function(vector){
   min <- min(vector)
@@ -35,3 +38,27 @@ regress <-
     model <- eval(parse(text = express))
     return(model)
   }
+
+# df with 3 columns:
+###  id_circ
+###  party
+###  vote_share
+generate_rri <- function(df) {
+  print("The function will only work if the variables in `df` are in this order:")
+  print("    1. id_riding")
+  print("    2. party")
+  print("    3. vote_share")
+  names(df) <- c("id_riding", "party", "vote_share")
+  step_one <- df %>% 
+    group_by(id_riding) %>% 
+    mutate(rri1 = vote_share-max(vote_share))
+  RRI <- step_one %>% 
+    filter(rri1 != 0) %>% 
+    group_by(id_riding) %>% 
+    mutate(max = max(vote_share)) %>% 
+    filter(vote_share == max) %>% 
+    select(id_riding, second = vote_share) %>% 
+    right_join(., step_one, by = "id_riding") %>% 
+    mutate(rri = ifelse(rri1 == 0, vote_share-second, rri1))
+  return(RRI)
+}

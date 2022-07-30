@@ -1,7 +1,7 @@
 library(tidyverse)
 library(haven)
 
-Data <- readRDS("_SharedFolder_RecherchePoteaux/vote2019/ResultatsParBureau2019.rds")
+Data <- readRDS("_SharedFolder_RecherchePoteaux/vote2021/ResultatsParCirc2021.rds")
 parties <- c("NDP" = "NPD", "CPC" = "PCC", "LPC" = "PLC",
              "BQ" = "BQ", "PPC" = "PPC", "GPC" = "PVC")
 provinces <- c("10" = "tnl", "11" = "ipe", "12" = "ns", "13" = "nb",
@@ -21,11 +21,10 @@ TwitterData <- readRDS("_SharedFolder_RecherchePoteaux/vote2019/twitter.rds") %>
   select(-data.currentParty)
 names(TwitterData) <- c("id_circ", "n_tweets", "has_twitter", "party")
 
-ByCirc <- Data %>% 
-  group_by(IdCirc, Parti) %>% 
-  summarise(votes = sum(NbVotes)) %>% 
-  mutate(votes_circ = sum(votes),
-         prop = (votes/votes_circ)*100,
+ByCirc <- Data %>%
+  mutate(IdCirc = as.numeric(IdCirc)) %>% 
+  group_by(IdCirc) %>% 
+  mutate(prop = (NbVotes/NbÉlecteurs)*100,
          rri1 = prop-max(prop))
 
 RRI <- ByCirc %>% 
@@ -62,7 +61,7 @@ ggplot(RRI, aes(x = rri, y = factor(has_twitter,
   scale_color_manual(values = c("#1DA1F2", "#AAB8C2")) +
   scale_fill_manual(values =  c("#1DA1F2", "#AAB8C2")) +
   theme_ridges() +
-  xlab("Party's RRI in the candidate's\nriding in 2019") +
+  xlab("Party's RRI in the candidate's\nriding in 2021") +
   ylab("") +
   theme(panel.background = element_rect(fill = "white"),
         plot.background = element_rect(fill = "white"),

@@ -106,10 +106,11 @@ ggplot(data19, aes(x = rri, y = factor(has_twitter,
                 y = y,
                 label = label),
             size = 8,
-            fontface = "bold",
+            #color = "black",
+            #fontface = "bold",
             show.legend = F) +
   theme_ridges() +
-  xlab("Party's RRI in the candidate's\nriding in 2019") +
+  xlab("Party's RRI in the Candidate's\nRiding in 2019") +
   ylab("") +
   theme(panel.background = element_rect(fill = "white"),
         plot.background = element_rect(fill = "white"),
@@ -171,10 +172,10 @@ ggplot(data21, aes(x = rri, y = factor(has_twitter,
                 y = y,
                 label = label),
             size = 8,
-            fontface = "bold",
+            #fontface = "bold",
             show.legend = F) +
   theme_ridges() +
-  xlab("Party's RRI in the candidate's\nriding in 2021") +
+  xlab("Party's RRI in the Candidate's\nRiding in 2021") +
   ylab("") +
   theme(panel.background = element_rect(fill = "white"),
         plot.background = element_rect(fill = "white"),
@@ -183,4 +184,5 @@ ggplot(data21, aes(x = rri, y = factor(has_twitter,
              size= 1.5)
 ggsave("_SharedFolder_RecherchePoteaux/graphs/account_vs_noacc21.png",
        width = 10, height = 7)  
+
 

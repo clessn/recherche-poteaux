@@ -73,17 +73,9 @@ ggsave("_SharedFolder_RecherchePoteaux/graphs/account_vs_noacc.png",
        width = 7, height = 5)  
 
 
-party_names <- c(
-  PLC = "LPC",
-  PCC = "CPC",
-  NPD = "NDP",
-  BQ = "BQ",
-  PVC = "GPC"
-)
 
 
-party_color <- data.frame(var = c("LPC", "CPC", "NDP", "BQ", "GPC"),
-                          var_color= c("#D71920","#1A4782","#F37021","#33B2CC", "#3D9B35"))
+
 
   
   (

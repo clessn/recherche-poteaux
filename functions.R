@@ -59,6 +59,7 @@ generate_rri <- function(df) {
     filter(vote_share == max) %>% 
     select(id_riding, second = vote_share) %>% 
     right_join(., step_one, by = "id_riding") %>% 
-    mutate(rri = ifelse(rri1 == 0, vote_share-second, rri1))
+    mutate(rri = ifelse(rri1 == 0, vote_share-second, rri1)) %>% 
+    select(id_riding, party, rri)
   return(RRI)
 }

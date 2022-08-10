@@ -186,3 +186,36 @@ ggsave("_SharedFolder_RecherchePoteaux/graphs/account_vs_noacc21.png",
        width = 10, height = 7)  
 
 
+#### Test Alex ####
+DataHyp1 <- data21
+
+DataHyp1$has_twitter[DataHyp1$has_twitter == "With Twitter"] <- 0
+DataHyp1$has_twitter[DataHyp1$has_twitter == "Without Twitter"] <- 1
+table(DataHyp1$has_twitter)
+
+
+DataHyp2 <- data21 %>% 
+  filter(n_tweets > 1)
+
+
+ggplot(DataHyp2 , aes(x = rri, y = n_tweets)) +
+  geom_point() +
+  geom_smooth()
+ 
+# test hyp 
+
+model1 <- glm(rri ~ has_twitter, data = DataHyp1)
+summary(model1)
+
+model2 <- lm(rri ~ n_tweets, data = DataHyp2)
+summary(model2)
+
+
+
+
+
+
+
+
+
+

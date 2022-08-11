@@ -198,13 +198,13 @@ DataHyp2 <- data21 %>%
   filter(n_tweets > 1)
 
 
-ggplot(DataHyp2 , aes(x = rri, y = n_tweets)) +
+ggplot(DataHyp2 , aes(x = rri, y = log(n_tweets))) +
   geom_point() +
   geom_smooth()
  
 # test hyp 
 
-model1 <- glm(rri ~ has_twitter, data = DataHyp1)
+model1 <- glm(rri ~ has_twitter , data = DataHyp1)
 summary(model1)
 
 model2 <- lm(rri ~ n_tweets, data = DataHyp2)

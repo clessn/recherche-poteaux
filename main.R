@@ -1,7 +1,7 @@
-# 0. Packages and functions ####
+#### 0. Packages and functions ####
 source("functions.R", encoding = "UTF-8")
 
-# 1. Define useful variables ####
+#### 1. Define useful variables ####
 party_names_plot <- c(
   PLC = "LPC",
   PCC = "CPC",
@@ -25,8 +25,9 @@ circs_TOR <- c(35027, 35028, 35029, 35081, 35120, 35121,
                35118, 35024, 35018, 35090, 35110, 35101,
                35109, 35108, 35019, 35020, 35021, 35007,
                35093, 35094, 35095, 35096, 35097, 35098, 35115)
-# 2. Data ####
-## 2.1 Load Data ####
+
+#### 2. Data ####
+#### 2.1 Load Data ####
 Vote19 <- readRDS("_SharedFolder_RecherchePoteaux/ready_data/voteresults2019.RDS")
 Vote21 <- readRDS("_SharedFolder_RecherchePoteaux/ready_data/voteresults2021.RDS")
 Twitter <- readRDS("_SharedFolder_RecherchePoteaux/ready_data/twitter.rds") %>%
@@ -34,12 +35,12 @@ Twitter <- readRDS("_SharedFolder_RecherchePoteaux/ready_data/twitter.rds") %>%
   select(-data.currentParty)
 names(Twitter) <- c("id_riding", "n_tweets", "has_twitter", "party")
 
-## 2.2 Bind RRI dataframes for 2019 and 2021 ####
+#### 2.2 Bind RRI dataframes for 2019 and 2021 ####
 rri19 <- generate_rri(Vote19)
 rri21 <- generate_rri(Vote21) %>% 
   mutate(id_riding = as.numeric(id_riding))
 
-## 2.3 join Twitter Data
+#### 2.3 join Twitter Data ####
 data19 <- rri19 %>% 
   left_join(., Twitter, by = c("id_riding", "party")) %>% 
   replace_na(list(n_tweets = 0, has_twitter = 0)) %>% 
@@ -66,7 +67,7 @@ data21 <- rri21 %>%
   fastDummies::dummy_cols(., select_columns = "prov") %>% 
   fastDummies::dummy_cols(., select_columns = "party")
 
-# 3. Graphs ####
+#### 3. Graphs ####
 
 ## additional dfs ####
 WinLoseByParty21 <- data21 %>%
@@ -86,9 +87,9 @@ WinLose21 <- WinLoseByParty21 %>%
          y = c(2.35, 2.28, 1.57, 1.15),
          label = paste0(round(prop), "%"))
 
-## 2019 rri ####
+#### 2019 RRI ####
 
-### all parties ####
+#### All parties ####
 ggplot(data19, aes(x = rri, y = factor(has_twitter,
                                     levels = c("Without Twitter",
                                                "With Twitter")),
@@ -120,8 +121,8 @@ ggplot(data19, aes(x = rri, y = factor(has_twitter,
 ggsave("_SharedFolder_RecherchePoteaux/graphs/account_vs_noacc19.png",
        width = 10, height = 7)  
 
-### by parties ####
-ggplot(data19, aes(x = rri, y = factor(has_twitter,
+#### By parties ####
+ggplot(data21, aes(x = rri, y = factor(has_twitter,
                                        levels = c("Without Twitter",
                                                   "With Twitter")),
                    color = has_twitter, fill = has_twitter)) +
@@ -135,7 +136,7 @@ ggplot(data19, aes(x = rri, y = factor(has_twitter,
   scale_color_manual(values = c("#1DA1F2", "#AAB8C2")) +
   scale_fill_manual(values =  c("#1DA1F2", "#AAB8C2")) +
   theme_ridges() +
-  xlab("Party's RRI in the candidate's\nriding in 2019") +
+  xlab("Party's RRI in the candidate's\nriding in 2021") +
   ylab("") +
   theme(panel.background = element_rect(fill = "white"),
         plot.background = element_rect(fill = "white"),
@@ -149,12 +150,12 @@ ggplot(data19, aes(x = rri, y = factor(has_twitter,
         )) +
   geom_vline(xintercept = 0,
              size= 1)
-ggsave("_SharedFolder_RecherchePoteaux/graphs/account_vs_noacc_party19.png",
+ggsave("_SharedFolder_RecherchePoteaux/graphs/account_vs_noacc_party21.png",
        width = 10, height = 7)
 
-## 2021 rri ####
+#### 2021 RRI ####
 
-### all parties ####
+### All parties ####
 ggplot(data21, aes(x = rri, y = factor(has_twitter,
                                        levels = c("Without Twitter",
                                                   "With Twitter")),
@@ -185,33 +186,89 @@ ggplot(data21, aes(x = rri, y = factor(has_twitter,
 ggsave("_SharedFolder_RecherchePoteaux/graphs/account_vs_noacc21.png",
        width = 10, height = 7)  
 
+#### Distribution n_tweets par partis ####
 
-#### Test Alex ####
+
+
+
+#### Modèles ####
 DataHyp1 <- data21
 
 DataHyp1$has_twitter[DataHyp1$has_twitter == "With Twitter"] <- 0
 DataHyp1$has_twitter[DataHyp1$has_twitter == "Without Twitter"] <- 1
 table(DataHyp1$has_twitter)
 
+DataHyp1$partyLPC <- NA
+DataHyp1$partyLPC[DataHyp1$party == "PLC"] <- 1
+DataHyp1$partyLPC[DataHyp1$party != "PLC"] <- 0
+table(DataHyp1$partyLPC)
+
+DataHyp1$partyCPC <- NA
+DataHyp1$partyCPC[DataHyp1$party == "PCC"] <- 1
+DataHyp1$partyCPC[DataHyp1$party != "PCC"] <- 0
+table(DataHyp1$partyCPC)
+
+DataHyp1$partyBQ <- NA
+DataHyp1$partyBQ[DataHyp1$party == "BQ"] <- 1
+DataHyp1$partyBQ[DataHyp1$party != "BQ"] <- 0
+table(DataHyp1$partyBQ)
+
+DataHyp1$partyNDP <- NA
+DataHyp1$partyNDP[DataHyp1$party == "NPD"] <- 1
+DataHyp1$partyNDP[DataHyp1$party != "NPD"] <- 0
+table(DataHyp1$partyNDP)
+
+DataHyp1$partyGPC <- NA
+DataHyp1$partyGPC[DataHyp1$party == "PVC"] <- 1
+DataHyp1$partyGPC[DataHyp1$party != "PVC"] <- 0
+table(DataHyp1$partyGPC)
 
 DataHyp2 <- data21 %>% 
   filter(n_tweets > 1)
+
+DataHyp2$partyLPC <- NA
+DataHyp2$partyLPC[DataHyp2$party == "PLC"] <- 1
+DataHyp2$partyLPC[DataHyp2$party != "PLC"] <- 0
+table(DataHyp2$partyLPC)
+
+DataHyp2$partyCPC <- NA
+DataHyp2$partyCPC[DataHyp2$party == "PCC"] <- 1
+DataHyp2$partyCPC[DataHyp2$party != "PCC"] <- 0
+table(DataHyp2$partyCPC)
+
+DataHyp2$partyBQ <- NA
+DataHyp2$partyBQ[DataHyp2$party == "BQ"] <- 1
+DataHyp2$partyBQ[DataHyp2$party != "BQ"] <- 0
+table(DataHyp2$partyBQ)
+
+DataHyp2$partyNDP <- NA
+DataHyp2$partyNDP[DataHyp2$party == "NPD"] <- 1
+DataHyp2$partyNDP[DataHyp2$party != "NPD"] <- 0
+table(DataHyp2$partyNDP)
+
+DataHyp2$partyGPC <- NA
+DataHyp2$partyGPC[DataHyp2$party == "PVC"] <- 1
+DataHyp2$partyGPC[DataHyp2$party != "PVC"] <- 0
+table(DataHyp2$partyGPC)
 
 
 ggplot(DataHyp2 , aes(x = rri, y = n_tweets)) +
   geom_point() +
   geom_smooth()
- 
-# test hyp 
 
-model1 <- glm(rri ~ has_twitter, data = DataHyp1)
-summary(model1)
+model1a <- lm(rri ~ has_twitter, data = DataHyp1)
+summary(model1a)
 
-model2 <- lm(rri ~ n_tweets, data = DataHyp2)
-summary(model2)
+model1b <- lm(rri ~ has_twitter + partyCPC + partyNDP + partyBQ + partyGPC, data = DataHyp1)
+summary(model1b)
 
+model2a <- lm(rri ~ n_tweets, data = DataHyp2)
+summary(model2a)
 
+model2b <- lm(rri ~ n_tweets + partyCPC + partyNDP + partyBQ + partyGPC, data = DataHyp2)
+summary(model2b)
 
+# Tableaux (Alex s'en charge?)
 
 
 

@@ -35,3 +35,21 @@ Check <- Data %>%
 Validation <- readxl::read_xlsx("_SharedFolder_RecherchePoteaux/validate_problematic-hubert.xlsx") %>% 
   filter(is.na(Validé))
 
+NewData <- Validation %>% 
+  select(ED_CODE, n_tw = `Nb tweets`, has_twi = `Compte Twitter`, party)
+
+Check$id_riding_party <- paste0(Check$ED_CODE, Check$party)
+Data$id_riding_party <- paste0(Data$ED_CODE, Data$party)
+
+Data <- Data %>% 
+  filter(!(id_riding_party %in% Check$id_riding_party)) %>% 
+  select(-id_riding_party) %>% 
+  rbind(., NewData) %>% 
+  distinct()
+
+saveRDS(Data, "_SharedFolder_RecherchePoteaux/ready_data/twitter2.rds")
+
+Validate <- Data %>% 
+  filter(party != "PPC") %>% 
+  group_by(ED_CODE, party) %>% 
+  summarise(n = n())

@@ -30,9 +30,14 @@ circs_TOR <- c(35027, 35028, 35029, 35081, 35120, 35121,
 #### 2.1 Load Data ####
 Vote19 <- readRDS("_SharedFolder_RecherchePoteaux/ready_data/voteresults2019.RDS")
 Vote21 <- readRDS("_SharedFolder_RecherchePoteaux/ready_data/voteresults2021.RDS")
-Twitter <- readRDS("_SharedFolder_RecherchePoteaux/ready_data/twitter.rds") %>%
-  mutate(party = parties[data.currentParty]) %>% 
-  select(-data.currentParty)
+#Twitter <- readRDS("_SharedFolder_RecherchePoteaux/ready_data/twitter.rds") %>%
+#  mutate(party = parties[data.currentParty]) %>% 
+#  select(-data.currentParty)
+
+# New dataset without duplicates
+Twitter <- readRDS("_SharedFolder_RecherchePoteaux/ready_data/twitter2.rds") %>%
+  mutate(party = parties[party])
+
 names(Twitter) <- c("id_riding", "n_tweets", "has_twitter", "party")
 
 #### 2.2 Bind RRI dataframes for 2019 and 2021 ####

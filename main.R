@@ -158,7 +158,7 @@ ggsave("_SharedFolder_RecherchePoteaux/graphs/account_vs_noacc_party21.png",
 ### All parties ####
 ggplot(data21, aes(x = rri, y = factor(has_twitter,
                                        levels = c("Without Twitter",
-                                                  "With Twitter")),
+                nn                                      "With Twitter")),
                    color = has_twitter, fill = has_twitter)) +
   geom_density_ridges(bandwidth = 1.5,
                       scale = 0.95,
@@ -188,7 +188,31 @@ ggsave("_SharedFolder_RecherchePoteaux/graphs/account_vs_noacc21.png",
 
 #### Distribution n_tweets par partis ####
 
+data21$partyEN <- NA
+data21$partyEN[data21$party == "PLC"] <- "LPC"
+data21$partyEN[data21$party == "BQ"] <- "BQ"
+data21$partyEN[data21$party == "PCC"] <- "CPC"
+data21$partyEN[data21$party == "NPD"] <- "NDP"
+data21$partyEN[data21$party == "PVC"] <- "GPC"
+table(data21$partyEN)
 
+
+data21 %>% 
+  ggplot(., aes(x= partyEN, y = n_tweets, fill = partyEN)) +
+  # geom_jitter(color = "grey") +
+  stat_boxplot(geom ='errorbar', width = 0.2, size = 0.2) +
+  geom_boxplot(alpha = 0.9, size = 0.2, outlier.color = "grey") + #outlier.shape = NA
+  scale_y_continuous(limits = c(1, 500)) + 
+  scale_fill_manual(values = c("#33B2CC", "#1A4782", "#3D9B35", "#D71920", "#F37021")) +
+  scale_color_manual(values = c("#33B2CC", "#1A4782", "#3D9B35", "#D71920", "#F37021")) +
+  ylab("\nNumber of tweets\n") +
+  xlab("\nParties in the Candidate's\nRiding in 2021\n") + 
+  theme_minimal() +
+  theme(axis.title.x = element_text(size = 12, hjust = 0.5, 
+        axis.title.x = element_text(size = 12, hjust = 0.5, 
+        legend.position = "none")
+ggsave("_SharedFolder_RecherchePoteaux/graphs/boxplot_n_tweets_party21.png",
+       width = 10, height = 7)
 
 
 #### Modèles ####
@@ -263,7 +287,6 @@ summary(model1)
 
 model2 <- lm(rri ~ n_tweets, data = DataHyp2)
 summary(model2)
-
 
 model1a <- lm(rri ~ has_twitter, data = DataHyp1)
 summary(model1a)

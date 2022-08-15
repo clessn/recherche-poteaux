@@ -287,7 +287,7 @@ ggplot(DataHyp2 , aes(x = rri, y = log(n_tweets))) +
  
 # test hyp 
 
-model1 <- glm(rri ~ has_twitter , data = DataHyp1)
+model1 <- lm(rri ~ has_twitter , data = DataHyp1)
 summary(model1)
 
 model2 <- lm(rri ~ n_tweets, data = DataHyp2)
@@ -312,14 +312,15 @@ stargazer(model1, model1b, model2a, model2b,
           covariate.labels=c("Without Twitter", "Number of tweets", "CPC", "NDP", "BQ", "GPC",  "\\_constante"),
           font.size="scriptsize", report="vc*s", nobs=TRUE, no.space=TRUE,
           digits.extra=1, digits=2,
-          dep.var.labels="R.R.I",
+          dep.var.labels="R.R.I.",
           omit.stat=c("f","ser","rsq","adj.rsq"),
           style="apsr",
           star.cutoffs=c(0.05,0.01,0.001),
           notes.append=FALSE, notes.align="l",
           notes.label="", # Remove the "Note:": By default in a table
-          notes=c("\\emph{Source}: ÉCRIRE SOURCE", 
-                  "\\emph{Note}: Logistic regressions.", 
+          notes=c("\\emph{Source}: Data collected from XXX account via Twitter API
+                  from Date to Date (n= XXXX Tweets.)", 
+                  "\\emph{Note}: Linear regressions.", 
                   "$^{*}$p$<$0.05; $^{**}$p$<$0.01; $^{***}$p$<$0.001"))
 
 

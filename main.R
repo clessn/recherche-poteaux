@@ -88,7 +88,7 @@ WinLose21 <- WinLoseByParty21 %>%
   mutate(n_group = sum(n),
          prop = (n/n_group)*100) %>% 
   ungroup() %>% 
-  mutate(x = c(-48, 36.5, -55, 20),
+  mutate(x = c(-52, 41.5, -60, 25),
          y = c(2.35, 2.28, 1.57, 1.15),
          label = paste0(round(prop), "%"))
 
@@ -173,7 +173,7 @@ ggplot(data21, aes(x = rri, y = factor(has_twitter,
   scale_y_discrete(expand = c(0,0)) +
   scale_color_manual(values = c("#1DA1F2", "#AAB8C2")) +
   scale_fill_manual(values =  c("#1DA1F2", "#AAB8C2")) +
-  geom_text(data = WinLose21,
+  geom_text(data = WinLose21, 
             aes(x = x,
                 y = y,
                 label = label),

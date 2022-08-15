@@ -30,12 +30,12 @@ circs_TOR <- c(35027, 35028, 35029, 35081, 35120, 35121,
 #### 2.1 Load Data ####
 Vote19 <- readRDS("_SharedFolder_RecherchePoteaux/ready_data/voteresults2019.RDS")
 Vote21 <- readRDS("_SharedFolder_RecherchePoteaux/ready_data/voteresults2021.RDS")
-#Twitter <- readRDS("_SharedFolder_RecherchePoteaux/ready_data/twitter.rds") %>%
-#  mutate(party = parties[data.currentParty]) %>% 
-#  select(-data.currentParty)
+Twitter <- readRDS("_SharedFolder_RecherchePoteaux/ready_data/twitter.rds") %>%
+  mutate(party = parties[data.currentParty]) %>% 
+  select(-data.currentParty)
 
 # New dataset without duplicates
-Twitter <- readRDS("_SharedFolder_RecherchePoteaux/ready_data/twitter2.rds") %>%
+Twitter <- readRDS("_SharedFolder_RecherchePoteaux/ready_data/twitter2.rds") #%>%
   mutate(party = parties[party])
 
 names(Twitter) <- c("id_riding", "n_tweets", "has_twitter", "party")
@@ -163,7 +163,7 @@ ggsave("_SharedFolder_RecherchePoteaux/graphs/account_vs_noacc_party21.png",
 ### All parties ####
 ggplot(data21, aes(x = rri, y = factor(has_twitter,
                                        levels = c("Without Twitter",
-                nn                                      "With Twitter")),
+                                                     "With Twitter")),
                    color = has_twitter, fill = has_twitter)) +
   geom_density_ridges(bandwidth = 1.5,
                       scale = 0.95,
@@ -306,9 +306,21 @@ model2b <- lm(rri ~ n_tweets + partyCPC + partyNDP + partyBQ + partyGPC, data = 
 summary(model2b)
 
 # Tableaux (Alex s'en charge?)
-
-
-
+stargazer(model1, model1b, model2a, model2b,
+          title="Test of hypothesis 1  2",
+          order=c("has_twitter", "n_tweets", "partyCPC","partyNDP","partyGPC"),
+          covariate.labels=c("Without Twitter", "Number of tweets", "CPC", "NDP", "BQ", "GPC",  "\\_constante"),
+          font.size="scriptsize", report="vc*s", nobs=TRUE, no.space=TRUE,
+          digits.extra=1, digits=2,
+          dep.var.labels="R.R.I",
+          omit.stat=c("f","ser","rsq","adj.rsq"),
+          style="apsr",
+          star.cutoffs=c(0.05,0.01,0.001),
+          notes.append=FALSE, notes.align="l",
+          notes.label="", # Remove the "Note:": By default in a table
+          notes=c("\\emph{Source}: ÉCRIRE SOURCE", 
+                  "\\emph{Note}: Logistic regressions.", 
+                  "$^{*}$p$<$0.05; $^{**}$p$<$0.01; $^{***}$p$<$0.001"))
 
 
 

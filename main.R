@@ -34,11 +34,20 @@ Twitter <- readRDS("_SharedFolder_RecherchePoteaux/ready_data/twitter.rds") %>%
   mutate(party = parties[data.currentParty]) %>% 
   select(-data.currentParty)
 
+
+
+
 # New dataset without duplicates
 Twitter <- readRDS("_SharedFolder_RecherchePoteaux/ready_data/twitter2.rds") #%>%
   mutate(party = parties[party])
 
+
 names(Twitter) <- c("id_riding", "n_tweets", "has_twitter", "party")
+
+Twitter$party[Twitter$party == "PPC"] <- NA
+
+Twitter <- na.omit(Twitter)
+
 
 #### 2.2 Bind RRI dataframes for 2019 and 2021 ####
 rri19 <- generate_rri(Vote19)
@@ -220,7 +229,7 @@ ggsave("_SharedFolder_RecherchePoteaux/graphs/boxplot_n_tweets_party21.png",
        width = 10, height = 7)
 
 
-#### Modèles ####
+    #### Modèles ####
 DataHyp1 <- data21
 
 DataHyp1$has_twitter[DataHyp1$has_twitter == "With Twitter"] <- 0
@@ -284,7 +293,20 @@ table(DataHyp2$partyGPC)
 ggplot(DataHyp2 , aes(x = rri, y = log(n_tweets))) +
   geom_point() +
   geom_smooth()
+
+
+
+
+##### Ajout des socio démo ####
+
+DataInfo <- read.csv("/Users/alexandrecote/Dropbox/_CLESSN/recherche-poteaux/_SharedFolder_RecherchePoteaux/data_candidates/CandidateDataset-2021-FINAL-public.csv", sep = ";")
  
+
+
+[Twitter$party == "PPC"] <- NA
+
+
+
 # test hyp 
 
 model1 <- lm(rri ~ has_twitter , data = DataHyp1)

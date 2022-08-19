@@ -3,6 +3,8 @@ library(haven)
 library(data.table)
 library(cowplot)
 library(ggtext)
+library(ggridges)
+library(stargazer)
 
 normalize <- function(vector){
   min <- min(vector)
@@ -63,3 +65,4 @@ generate_rri <- function(df) {
     select(id_riding, party, rri)
   return(RRI)
 }
+

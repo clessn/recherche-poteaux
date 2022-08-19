@@ -30,14 +30,22 @@ circs_TOR <- c(35027, 35028, 35029, 35081, 35120, 35121,
 #### 2.1 Load Data ####
 Vote19 <- readRDS("_SharedFolder_RecherchePoteaux/ready_data/voteresults2019.RDS")
 Vote21 <- readRDS("_SharedFolder_RecherchePoteaux/ready_data/voteresults2021.RDS")
-#Twitter <- readRDS("_SharedFolder_RecherchePoteaux/ready_data/twitter.rds") %>%
-#  mutate(party = parties[data.currentParty]) %>% 
-#  select(-data.currentParty)
+Twitter <- readRDS("_SharedFolder_RecherchePoteaux/ready_data/twitter.rds") %>%
+  mutate(party = parties[data.currentParty]) %>% 
+  select(-data.currentParty)
+
+
+
 
 # New dataset without duplicates
 Twitter <- readRDS("_SharedFolder_RecherchePoteaux/ready_data/twitter2.rds")
 
 names(Twitter) <- c("id_riding", "n_tweets", "has_twitter", "party")
+
+Twitter$party[Twitter$party == "PPC"] <- NA
+
+Twitter <- na.omit(Twitter)
+
 
 #### 2.2 Bind RRI dataframes for 2019 and 2021 ####
 rri19 <- generate_rri(Vote19)
@@ -87,7 +95,7 @@ WinLose21 <- WinLoseByParty21 %>%
   mutate(n_group = sum(n),
          prop = (n/n_group)*100) %>% 
   ungroup() %>% 
-  mutate(x = c(-48, 36.5, -55, 20),
+  mutate(x = c(-52, 41.5, -60, 25),
          y = c(2.35, 2.28, 1.57, 1.15),
          label = paste0(round(prop), "%"))
 
@@ -162,7 +170,7 @@ ggsave("_SharedFolder_RecherchePoteaux/graphs/account_vs_noacc_party21.png",
 ### All parties ####
 ggplot(data21, aes(x = rri, y = factor(has_twitter,
                                        levels = c("Without Twitter",
-                nn                                      "With Twitter")),
+                                                     "With Twitter")),
                    color = has_twitter, fill = has_twitter)) +
   geom_density_ridges(bandwidth = 1.5,
                       scale = 0.95,
@@ -172,7 +180,7 @@ ggplot(data21, aes(x = rri, y = factor(has_twitter,
   scale_y_discrete(expand = c(0,0)) +
   scale_color_manual(values = c("#1DA1F2", "#AAB8C2")) +
   scale_fill_manual(values =  c("#1DA1F2", "#AAB8C2")) +
-  geom_text(data = WinLose21,
+  geom_text(data = WinLose21, 
             aes(x = x,
                 y = y,
                 label = label),
@@ -219,7 +227,7 @@ ggsave("_SharedFolder_RecherchePoteaux/graphs/boxplot_n_tweets_party21.png",
        width = 10, height = 7)
 
 
-#### Modèles ####
+    #### Modèles ####
 DataHyp1 <- data21
 
 DataHyp1$has_twitter[DataHyp1$has_twitter == "With Twitter"] <- 0
@@ -283,10 +291,23 @@ table(DataHyp2$partyGPC)
 ggplot(DataHyp2 , aes(x = rri, y = log(n_tweets))) +
   geom_point() +
   geom_smooth()
+
+
+
+
+##### Ajout des socio démo ####
+
+DataInfo <- read.csv("/Users/alexandrecote/Dropbox/_CLESSN/recherche-poteaux/_SharedFolder_RecherchePoteaux/data_candidates/CandidateDataset-2021-FINAL-public.csv", sep = ";")
  
+
+
+[Twitter$party == "PPC"] <- NA
+
+
+
 # test hyp 
 
-model1 <- glm(rri ~ has_twitter , data = DataHyp1)
+model1 <- lm(rri ~ has_twitter , data = DataHyp1)
 summary(model1)
 
 model2 <- lm(rri ~ n_tweets, data = DataHyp2)
@@ -305,9 +326,22 @@ model2b <- lm(rri ~ n_tweets + partyCPC + partyNDP + partyBQ + partyGPC, data = 
 summary(model2b)
 
 # Tableaux (Alex s'en charge?)
-
-
-
+stargazer(model1, model1b, model2a, model2b,
+          title="Test of hypothesis 1  2",
+          order=c("has_twitter", "n_tweets", "partyCPC","partyNDP","partyGPC"),
+          covariate.labels=c("Without Twitter", "Number of tweets", "CPC", "NDP", "BQ", "GPC",  "\\_constante"),
+          font.size="scriptsize", report="vc*s", nobs=TRUE, no.space=TRUE,
+          digits.extra=1, digits=2,
+          dep.var.labels="R.R.I.",
+          omit.stat=c("f","ser","rsq","adj.rsq"),
+          style="apsr",
+          star.cutoffs=c(0.05,0.01,0.001),
+          notes.append=FALSE, notes.align="l",
+          notes.label="", # Remove the "Note:": By default in a table
+          notes=c("\\emph{Source}: Data collected from XXX account via Twitter API
+                  from Date to Date (n= XXXX Tweets.)", 
+                  "\\emph{Note}: Linear regressions.", 
+                  "$^{*}$p$<$0.05; $^{**}$p$<$0.01; $^{***}$p$<$0.001"))
 
 
 

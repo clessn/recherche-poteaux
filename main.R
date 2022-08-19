@@ -35,8 +35,7 @@ Vote21 <- readRDS("_SharedFolder_RecherchePoteaux/ready_data/voteresults2021.RDS
 #  select(-data.currentParty)
 
 # New dataset without duplicates
-Twitter <- readRDS("_SharedFolder_RecherchePoteaux/ready_data/twitter2.rds") %>%
-  mutate(party = parties[party])
+Twitter <- readRDS("_SharedFolder_RecherchePoteaux/ready_data/twitter2.rds")
 
 names(Twitter) <- c("id_riding", "n_tweets", "has_twitter", "party")
 

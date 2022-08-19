@@ -4,7 +4,7 @@ Data <- readRDS("_SharedFolder_RecherchePoteaux/ready_data/twitter.rds") %>%
   mutate(party = parties[data.currentParty]) %>% 
   select(-data.currentParty)
 
-candidates <- table_candidates
+#candidates <- table_candidates
 
 Duplicates <- Data %>% 
   distinct() %>% 

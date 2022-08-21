@@ -220,9 +220,10 @@ data21 %>%
   ylab("\nNumber of tweets\n") +
   xlab("\nParties in the Candidate's\nRiding in 2021\n") + 
   theme_minimal() +
-  theme(axis.title.x = element_text(size = 12, hjust = 0.5, 
-        axis.title.x = element_text(size = 12, hjust = 0.5, 
-        legend.position = "none")
+  theme(axis.title.x = element_text, size = 12, hjust = 0.5,
+        axis.title.x = element_text, size = 12, hjust = 0.5, 
+        legend.position = "none") 
+        
 ggsave("_SharedFolder_RecherchePoteaux/graphs/boxplot_n_tweets_party21.png",
        width = 10, height = 7)
 
@@ -293,19 +294,15 @@ ggplot(DataHyp2 , aes(x = rri, y = log(n_tweets))) +
   geom_smooth()
 
 
-
-
 ##### Ajout des socio démo ####
 
-DataInfo <- read.csv("/Users/alexandrecote/Dropbox/_CLESSN/recherche-poteaux/_SharedFolder_RecherchePoteaux/data_candidates/CandidateDataset-2021-FINAL-public.csv", sep = ";")
- 
-
+DataInfo <- read.csv("_SharedFolder_RecherchePoteaux/data_candidates/CandidateDataset-2021-FINAL-public.csv", sep = ";")
+# Probablement qu'il me faut le nom de la circonscription associé au id_riding pour pouvoir merger
+# les données. - Justine
 
 [Twitter$party == "PPC"] <- NA
 
-
-
-# test hyp 
+# Teste des hypothèses
 
 model1 <- lm(rri ~ has_twitter , data = DataHyp1)
 summary(model1)
